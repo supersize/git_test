@@ -8,38 +8,102 @@
 			box-sizing: border-box;
 		}
 		
-		body{
+		body, .container, .first-inner-round, .second-inner-round {
 			display: flex;
 			justify-content: center;
 			align-items: center;
+		}
+		
+		body{
 			min-height: 100vh;
 			margin: 0;
 		}
-		.wapper {
+		.wrapper {
 			position: relative;
-			width: 600px;
-			height: 600px;
+			width: 800px;
+			height: 800px;
 		}
 		.container {
 			width: 100%;
 			height: 100%;
 			border-radius: 50%;
 			border: 1px solid black;
-			display: flex;
-			justify-content: center;
-			align-items: center;
 		}
-		.test{
-			width: 2px;
-			height: 
+		.first-inner-round{
+			width: 95%;
+			height: 95%;
+			border-radius: 50%;
+			border: 0px solid black; 
+			background-color: white;
+			z-index: 5;
+		}
+		.second-inner-round{
+			position:absolute;
+			width: 90%;
+			height: 90%;
+			border-radius: 50%;
+			border: 0px solid black; 
+			background-color: white;
+			z-index: 10;
+		}
+		.circle {
+			position:absolute;
+			width: 20px;
+			height: 20px;
+			border: 2px solid black;
+			border-radius: 50%;
+			z-index: 20;
+			background-color: white;
+		}
+		.hour-hand {
+			position: absolute;
+			width: 0px;
+			height: 35%;
+			border: 3px solid black;
+			top:100px;
+			z-index: 11;
+		}
+		.hour-triangle {
+			position: absolute;
+			width: 10px;
+			height: 10px;
+			border-right: 10px solid transparent;
+			border-left: 10px solid transparent;
+			border-bottom: 30px solid black;
+			transform: rotate(0deg);
+			top: 113px;
+			z-index: 30;
+		}
+		.hour-hand {
+			position: absolute;
+			width: 0px;
+			height: 25%;
+			border: 3px solid black;
+			z-index: 11;
+		}
+		.hour-triangle {
+			position: absolute;
+			width: 10px;
+			height: 10px;
+			border-right: 10px solid transparent;
+			border-left: 10px solid transparent;
+			border-bottom: 30px solid black;
+			transform: rotate(0deg);
+			top: 60px;
+			z-index: 30;
 		}
 	</style>
 </head>
 <body>
-	<div class="wapper">
-		<div class="test"></div>
+	<div class="wrapper">
 		<div class="container" id="container">
-<!-- 			<div class="diagonal"></div> -->
+			<div class="first-inner-round"></div>
+			<div class="second-inner-round" id="second-inner-round"></div>
+			<div class="circle"></div>
+			<div class="hour-hand"></div>
+			<div class="hour-triangle"></div>
+			<div class="minute-hand"></div>
+			<div class="minute-triangle"></div>
 		</div>
 	</div>
 </body>
