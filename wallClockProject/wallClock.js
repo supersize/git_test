@@ -18,7 +18,7 @@ window.onload = function () {
 		diagonal.style.backgroundColor = 'black';
 		diagonal.style.transform = 'rotate('+ angle +'deg)';
 		
-		// 시간 세팅
+		// 몇 시인지 세팅
 		var digitDiv = document.createElement('div');
 		digitDiv.classList.add("digit");
 		secondInnerRoundDiv.append(digitDiv);
@@ -48,6 +48,22 @@ window.onload = function () {
 		angle += 6;
 	}
 	
+	// 시간세팅 후 시침 움직이기
+	var hourHand = document.getElementsByClassName("hour-set")[0];
+	var minuteHand = document.getElementsByClassName("minute-set")[0];
+	console.log(hourHand);
+	console.log(minuteHand);
+	setInterval(function () {
+		var date = new Date();
+		console.log(date.getMinutes());
+		var currentHour = date.getHours();
+		currentHour > 12 ? currentHour-12 : currentHour
+				
+		var currentMinute = date.getMinutes();
+		minuteHand.style.transform = 'rotate('+ (currentMinute*6) +'deg)'; 
+		hourHand.style.transform = 'rotate('+ ((currentHour*30)+(currentMinute*0.5)) +'deg)'; 
+		
+	}, 1000);
 	
 }
 

@@ -55,15 +55,19 @@
 			z-index: 20;
 			background-color: white;
 		}
-		.hour-hand {
+		.minute-set{
 			position: absolute;
+			height: 70%;
+			z-index:19;
+		}
+		.minute-hand {
+			position: relative;
 			width: 0px;
-			height: 35%;
+			height: 50%;
 			border: 3px solid black;
-			top:100px;
 			z-index: 11;
 		}
-		.hour-triangle {
+		.minute-triangle {
 			position: absolute;
 			width: 10px;
 			height: 10px;
@@ -72,16 +76,23 @@
 			border-bottom: 30px solid black;
 			transform: rotate(0deg);
 			top: 113px;
+			top: -32px;
+			right: -10px;
 			z-index: 30;
 		}
-		.hour-hand {
+		.hour-set{
 			position: absolute;
+			height: 55%;
+			z-index:19;
+		}
+		.hour-hand {
+			position: relative;
 			width: 0px;
-			height: 25%;
+			height: 50%;
 			border: 3px solid black;
 			z-index: 11;
 		}
-		.hour-triangle {
+		.hour-triangle {	
 			position: absolute;
 			width: 10px;
 			height: 10px;
@@ -89,8 +100,18 @@
 			border-left: 10px solid transparent;
 			border-bottom: 30px solid black;
 			transform: rotate(0deg);
-			top: 60px;
+			top: -32px;
+			right: -10px;
 			z-index: 30;
+		}
+		.naming{
+			position: absolute;
+			border: 2px solid black;
+			width: 180px;
+			height: 50px;
+			bottom: 200px;
+			z-index: 18; 
+			text-align: center;
 		}
 	</style>
 </head>
@@ -100,10 +121,19 @@
 			<div class="first-inner-round"></div>
 			<div class="second-inner-round" id="second-inner-round"></div>
 			<div class="circle"></div>
-			<div class="hour-hand"></div>
-			<div class="hour-triangle"></div>
-			<div class="minute-hand"></div>
-			<div class="minute-triangle"></div>
+			<div class="hour-set">
+				<div class="hour-hand">
+					<div class="hour-triangle"></div>
+				</div>
+			</div>
+			<div class="minute-set">
+				<div class="minute-hand">
+					<div class="minute-triangle"></div>
+				</div>
+			</div>
+			<div class="naming">
+				<span style="font-family:verdana; font-size: 120%; vertical-align: middle;">coded by 김재형</span>
+			</div>
 		</div>
 	</div>
 </body>
