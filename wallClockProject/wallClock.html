@@ -28,6 +28,7 @@
 			height: 100%;
 			border-radius: 50%;
 			border: 1px solid black;
+			background-color: lightskyblue;
 		}
 		.first-inner-round{
 			width: 95%;
@@ -54,6 +55,18 @@
 			border-radius: 50%;
 			z-index: 20;
 			background-color: white;
+		}
+		.second-set{
+			position: absolute;
+			height: 80%;
+			z-index:19;
+		}
+		.second-hand {
+			position: relative;
+			width: 0px;
+			height: 50%;
+			border: 1.5px solid red;
+			z-index: 11;
 		}
 		.minute-set{
 			position: absolute;
@@ -105,13 +118,13 @@
 			z-index: 30;
 		}
 		.naming{
-			position: absolute;
 			border: 2px solid black;
 			width: 180px;
 			height: 50px;
 			bottom: 200px;
 			z-index: 18; 
 			text-align: center;
+			right: 200px;
 		}
 	</style>
 </head>
@@ -131,10 +144,16 @@
 					<div class="minute-triangle"></div>
 				</div>
 			</div>
-			<div class="naming">
-				<span style="font-family:verdana; font-size: 120%; vertical-align: middle;">coded by 김재형</span>
+			<div class="second-set">
+				<div class="second-hand">
+				</div>
 			</div>
 		</div>
+		<!-- 
+		<div class="naming">
+			<span style="font-family:verdana; font-size: 120%; vertical-align: middle;">coded by 김재형</span>
+		</div>
+		 -->
 	</div>
 </body>
 <script type="text/javascript" src="wallClock.js"></script>

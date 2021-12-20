@@ -44,22 +44,23 @@ window.onload = function () {
 				'</h1></div> <div style="margin: 0 auto;"><h1 style="transform:rotate(-'+angle+'deg); margin: 0;">'+(hour+6)+'</h1></div>';
 			}
 			hour++;
-		}
+		}dorcmdnjs12!
+		
 		angle += 6;
 	}
 	
 	// 시간세팅 후 시침 움직이기
 	var hourHand = document.getElementsByClassName("hour-set")[0];
 	var minuteHand = document.getElementsByClassName("minute-set")[0];
-	console.log(hourHand);
-	console.log(minuteHand);
+	var secondHand = document.getElementsByClassName("second-set")[0];
 	setInterval(function () {
 		var date = new Date();
-		console.log(date.getMinutes());
 		var currentHour = date.getHours();
 		currentHour > 12 ? currentHour-12 : currentHour
 				
 		var currentMinute = date.getMinutes();
+		var currentSecond = date.getSeconds();
+		secondHand.style.transform = 'rotate('+ (currentSecond*6) +'deg)'; 
 		minuteHand.style.transform = 'rotate('+ (currentMinute*6) +'deg)'; 
 		hourHand.style.transform = 'rotate('+ ((currentHour*30)+(currentMinute*0.5)) +'deg)'; 
 		
